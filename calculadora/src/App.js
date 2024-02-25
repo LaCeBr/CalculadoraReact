@@ -1,18 +1,29 @@
 import './App.css';
 import React, { useState } from 'react';
-import CampoNumerico from './componentes/CampoNumerico';
+import Entrada from './componentes/CampoNumerico';
+import Boton from './componentes/Boton';
+import Calculo from './componentes/Calculo';
 
 function App() {
-  const [value1, setValue1] = useState(0);
-  const [value2, setValue2] = useState(0);
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [resultado, setResultado] = useState(0);
+
+  const Opera = (operacion) => {
+    setResultado(Calculo(num1, num2, operacion));
+  };
 
   return (
     <div>
-      <p>Hola</p>
-      <CampoNumerico label="Valor 1" value={value1} onChange={setValue1} />
-      <CampoNumerico label="Valor 2" value={value2} onChange={setValue2} />
-      <br />
-      <p>Suma: {value1 + value2}</p>
+      <Entrada label="Primera Cifra" num={num1} onChange={setNum1} />
+      <Entrada label="Segunda Cifra" num={num2} onChange={setNum2} />
+
+      <Boton operacion="Sumar" onClick={Opera} />
+      <Boton operacion="Restar" onClick={Opera} />
+      <Boton operacion="Multiplicar" onClick={Opera} />
+      <Boton operacion="Dividir" onClick={Opera} />
+      
+      <p>Resultado: {resultado}</p>
     </div>
   );
 }
