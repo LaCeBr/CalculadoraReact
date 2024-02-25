@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import CampoNumerico from './componentes/CampoNumerico';
 
 function App() {
+  const [value1, setValue1] = useState(0);
+  const [value2, setValue2] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Hola</p>
+      <CampoNumerico label="Valor 1" value={value1} onChange={setValue1} />
+      <CampoNumerico label="Valor 2" value={value2} onChange={setValue2} />
+      <br />
+      <p>Suma: {value1 + value2}</p>
     </div>
   );
 }
