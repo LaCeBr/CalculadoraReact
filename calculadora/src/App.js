@@ -8,9 +8,11 @@ function App() {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [resultado, setResultado] = useState(0);
+  const [ultimaOperacion, setUltimaOperacion] = useState('Resultado');
 
   const Opera = (operacion) => {
     setResultado(Calculo(num1, num2, operacion));
+    setUltimaOperacion(operacion);
   };
 
   return (
@@ -23,7 +25,7 @@ function App() {
       <Boton operacion="Multiplicar" onClick={Opera} />
       <Boton operacion="Dividir" onClick={Opera} />
       
-      <p>Resultado: {resultado}</p>
+      <p>{ultimaOperacion}: {resultado}</p>
     </div>
   );
 }
