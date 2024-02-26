@@ -4,12 +4,10 @@ function CampoNumerico({ label, value, onChange }) {
   };
 
   return (
-    <div>
-      <label>
-        {label}:
-        <input type="number" value={value} onChange={handleInputChange} />
-      </label>
-    </div>
+    <label>
+      {label}:
+      <input type="number" value={value} onChange={handleInputChange} />
+    </label>
   );
 }
 

@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* Para asegurarte de que los contenedores ocupen toda la altura de la pantalla */
+}
+
+.contenedor > div {
+  margin: 10px; /* Añade un espacio entre los contenedores */
+  text-align: center; /* Alinea el texto dentro de los contenedores */
+}
