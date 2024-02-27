@@ -1,12 +1,12 @@
 function Calculo(num1, num2, operacion) {
     switch (operacion) {
-        case 'Sumar':
+        case '+':
             return num1 + num2;
-        case 'Restar':
+        case '-':
             return num1 - num2;
-        case 'Multiplicar':
+        case 'x':
             return num1 * num2;
-        case 'Dividir':
+        case '/':
             return num1 / num2;
         default:
             return 0;
